@@ -1,0 +1,55 @@
+<html>
+<head>
+<link rel="stylesheet" href="/product.css">
+
+</head>
+<body>
+
+<div class="navbar">
+  <a href="/home">Home</a>
+  <!---<a href="#news">News</a>--->
+
+  <% if(!userLogin) {%>
+    <a href="/login">Login / Signup</a>
+
+  <% } else { %>
+
+  <div class="dropdown">
+    <button class="dropbtn">Your Account
+    <!---<img src="<%= profile_pic %>"/>--->
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="/viewmycart">My Cart</a>
+      <a href="/updatePass">Update Password</a>
+      <a href="/logout">LogOut</a>
+      <!---<a href="#">Link 3</a>--->
+    </div>
+  </div> 
+  <% }%>
+</div>
+
+<br>
+
+<div class="products">
+
+</div>
+
+<button type="button" class="loadBtn" style="margin-top: 25px;">Load More</button>
+
+<!---<img src="<%= profile_pic %>" alt="profile pic"/>--->
+
+<div id="toast">
+  <div class="checkicon">  </div>
+LOGIN TO CONTINUE</div>
+
+
+<!---<div id="toast">
+  <div class="checkicon"> </div>
+LOGIN TO CONTINUE</div>--->
+
+</body>
+
+<script src="/viewer.js"></script>
+
+</html>
