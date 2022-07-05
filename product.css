@@ -1,0 +1,212 @@
+body{
+    background-color: lightblue;
+    margin: 0;
+    padding: 0;
+  }
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  padding: 14px 16px;
+  background-color: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+html {
+  display: table-column-group;
+  max-height: 80%;
+}
+
+.container {
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  width: 520px;
+  height: 350px;
+  background: wheat;
+  border-radius: 10px;
+}
+.container{
+   border-bottom: 1px solid #000;
+}
+
+p {
+  font-size: 15px;
+  color: black;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 1.2em;
+  color: black;
+  margin-top: -5px;
+}
+
+h2 {
+  margin-top: -5px;
+}
+
+img {
+    width: 50%;
+    margin-top: 50px;
+    margin-left: 30px;
+    margin-right: -8px;
+    margin-bottom: auto;
+    border-radius: 20px;
+    background-color:white;
+}
+
+.slideshow-buttons {
+  top: 70%;
+  display: none;
+}
+
+.loadBtn{
+  color: black;
+}
+
+.bt2{
+  color: black;
+}
+
+.bt1{
+  color: black;
+}
+
+
+.product {
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  top: 10%;
+  left: 60%;
+}
+
+.desc {
+  text-transform: none;
+  letter-spacing: 0;
+  margin-bottom: 17px;
+  color: black;
+  font-size: .7em;
+  line-height: 1.6em;
+  margin-right: 25px;
+  text-align: justify;
+}
+
+button {
+  background: darken(lightgreen, 10%);
+  padding: 10px;
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  margin: -1px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: white;
+  cursor: pointer;
+}
+
+.add {
+  width: 67%;
+}
+
+.sizes {
+  display: grid;
+  color: pink;
+  grid-template-columns: repeat(auto-fill, 30px);
+  width: 60%;
+  grid-gap: 4px;
+  margin-left: 20px;
+  margin-top: 5px;
+}
+
+.pick {
+  margin-top: 11px;
+  margin-bottom:0;
+  margin-left: 20px;
+}
+
+.size {
+  padding: 9px;
+  border: 1px solid lightgreen;
+  font-size: 0.7em;
+  text-align: center;
+}
+
+.focus{
+  background: red;
+  color: white;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 0.8em;
+  padding: 10px;
+}
+
+.center{
+text-align: center;
+}
+#toast {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -200px;
+  background-color: #d75d47;
+  color: black;
+  text-align: center;
+  border-radius: 10px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 16px;
+}
