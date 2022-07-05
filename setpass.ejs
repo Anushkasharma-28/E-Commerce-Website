@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>E-commerce</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <div class="error">
+    <% if(error) {%>
+    <h1><%= error %></h1>
+    <% } %>
+  </div>
+
+ <div class="wrapper">
+      <div class="title-text">
+        <div class="title login">Set Password</div>
+      </div>
+      <div class="form-container">
+        <div class="form-inner">        
+         <form method="post" action="/#" class="signup" id="passForm">
+            <div class="field">
+              <input name="password" type="password" placeholder="New Password" class="pass1" required>
+            </div>
+            <div class="field">
+              <input name="conPassword" type="password" placeholder="Confirm password" class="pass2" required>
+            </div>
+            <div class="field btn">
+              <div class="btn-layer"></div>
+              <input type="submit" class="signupBtn" value="Set Password"/>
+            </div>
+          </form>
+      </div>
+    </div>
+</body>
+
+<script>
+console.log("linked")
+
+var form = document.querySelector("#passForm");
+//var form = document.getElementsByTagName("form")[0];
+//console.log(form)
+var pass = document.querySelector(".pass1");
+var cpass = document.querySelector(".pass2");
+var el = document.querySelector(".error");
+
+form.addEventListener("submit",(event)=>{
+  event.preventDefault();
+  console.log("hit")
+
+  if(pass.value!==cpass.value){
+    el.innerHTML = "please match the passwords !!"
+    return;
+  }
+
+  var data = {
+    password : pass.value,
+    conPassword : cpass.value
+
+  }
+
+    var urlParams = new URLSearchParams(window.location.search);
+      //var name = urlParams.get("name");
+    var id = urlParams.get("id")
+  var request = new XMLHttpRequest();
+  request.open("post",`/setPass/${id}`)
+  request.setRequestHeader("Content-Type", "application/json");
+  request.send(JSON.stringify(data));
+
+  request.addEventListener("load",function(ev){
+    //console.log(request.responseText);
+    var status = ev.target.status;
+    // //console.log(status)
+    if (status === 400) {
+      el.innerHTML = "please match the passwords !!";
+    }
+    if(status === 200){
+     // el.innerHTML = "Password Reset link is sent to this email !!"; 
+      // window.location.replace(`/home?name=${data.name}`) 
+      window.location.replace("/"); 
+    }
+  })
+
+})
+
+console.log("linked")
+
+</script>
+
+</html>
