@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>E-commerce</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <div class="error">
+    <% if(error) {%>
+    <h1><%= error %></h1>
+    <% } %>
+  </div>
+
+ <div class="wrapper">
+      <div class="title-text">
+        <div class="title login">Login Form</div>
+        <div class="title signup">Signup Form</div>
+      </div>
+      <div class="form-container">
+        <div class="slide-controls">
+          <input type="radio" name="slide" id="login" checked>
+          <input type="radio" name="slide" id="signup">
+          <label for="login" class="slide login">Login</label>
+          <label for="signup" class="slide signup">Signup</label>
+          <div class="slider-tab"></div>
+        </div>
+        <div class="form-inner">        
+          <form action="/login" class="login" method="post">
+            <div class="field">
+              <input name="username" type="text" placeholder="Email Address" required>
+            </div>
+            <div class="field">
+              <input name="password" type="password" placeholder="Password" required>
+            </div>
+            <div class="pass-link"><a href="/forgotPass">Forgot password?</a></div>
+            <div class="field btn">
+              <div class="btn-layer"></div>
+              <input type="submit" class="loginBtn" value="Login"/>
+            </div>
+            <div class="signup-link">Not a member? <a href="">Signup</a></div>
+          </form>
+         <form method="post" action="/signup" class="signup" enctype="multipart/form-data">
+            <div class="field">
+              <input name="username" type="text" placeholder="Email Address" required>
+            </div>
+            <div class="field">
+              <input name="password" type="password" placeholder="Password" required>
+            </div>
+            <div class="field">
+              <input name="conPassword" type="password" placeholder="Confirm password" required>
+            </div>
+            <input name="profile_pic" type="file" required/>
+            <div class="field btn">
+              <div class="btn-layer"></div>
+              <input type="submit" class="signupBtn" value="Signup"/>
+            </div>
+          </form>
+      </div>
+    </div>
+</body>
+<script src="/login.js"></script>
+</html>
+
+
